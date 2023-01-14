@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="clock.css">
+    <title>Clock</title>
+</head>
+<body>    
+    <script>
+        var hourhand = document.querySelector('.hr');
+        var mnhand = document.querySelector('.mn');
+        var schand = document.querySelector('.sc');
+
+        function setDate() {
+            var now = new Date();
+
+  var seconds = now.getSeconds();
+  var secondsDegrees = seconds * 6;
+  sc.style.transform = "rotate("+ secondsDegrees +"deg)";
+
+  var mins = now.getMinutes();
+  var minsDegrees = mins*6
+  mn.style.transform = "rotate("+ minsDegrees +"deg)";
+
+  var hour = now.getHours();
+  var hourDegrees = hour*30 + mins/2;
+  hr.style.transform = "rotate("+ hourDegrees +"deg)";
+
+        }
+            setInterval(setDate,1000);
+            setDate();
+
+
+    </script>
+    
+    <div class="clock">
+        <div class="hour" >
+            <div class="hr" id="hr"></div>
+    </div>
+    <div class="min">
+      <div class="mn" id="mn"></div>
+    </div>
+    <div class="sec">
+       <div class="sc" id="sc"></div>
+    </div>
+    </div>
+</body>
+</html>
